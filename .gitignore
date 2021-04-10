@@ -63,6 +63,7 @@ build/
 .project
 .classpath
 
+.vscode
 *.tar.gz
 *x86*
 
