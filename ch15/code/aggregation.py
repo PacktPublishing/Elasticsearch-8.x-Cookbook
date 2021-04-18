@@ -1,4 +1,4 @@
-from code.utils import create_and_add_mapping, populate
+from utils import create_and_add_mapping, populate
 import elasticsearch
 from pprint import pprint
 
