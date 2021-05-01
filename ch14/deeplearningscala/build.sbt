@@ -19,7 +19,7 @@ lazy val nd4jVersion="1.0.0-beta3"
 lazy val dl4jVersion="1.0.0-beta3"
 
 libraryDependencies ++= {
-  val elastic4sV = "7.12.0"
+  val elastic4sV = "7.12.1"
   val scalaTestV = "3.0.8"
   val Log4jVersion = "2.12.1"
   Seq(
