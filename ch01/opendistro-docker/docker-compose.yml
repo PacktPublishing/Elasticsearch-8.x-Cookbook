@@ -1,7 +1,7 @@
 version: '3'
 services:
   odfe-node1:
-    image: amazon/opendistro-for-elasticsearch:1.13.0
+    image: amazon/opendistro-for-elasticsearch:1.13.2
     container_name: odfe-node1
     environment:
       - cluster.name=odfe-cluster
@@ -25,7 +25,7 @@ services:
     networks:
       - odfe-net
   odfe-node2:
-    image: amazon/opendistro-for-elasticsearch:1.13.0
+    image: amazon/opendistro-for-elasticsearch:1.13.2
     container_name: odfe-node2
     environment:
       - cluster.name=odfe-cluster
