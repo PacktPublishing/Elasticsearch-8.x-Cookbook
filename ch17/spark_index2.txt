@@ -1,0 +1,10 @@
+import org.apache.spark.SparkContext
+import org.elasticsearch.spark.rdd.EsSpark
+
+case class Person(username:String, name:String, age:Int)
+
+val persons = Seq(Person("bob", "Bob",19),Person("susan","Susan",21))
+
+val rdd=sc.makeRDD(persons)
+
+EsSpark.saveToEs(rdd, "spark2/persons", Map("es.mapping.id" -> "username"))

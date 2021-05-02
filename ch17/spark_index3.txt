@@ -1,0 +1,12 @@
+import org.elasticsearch.spark._
+
+case class Person(username:String, name:String, age:Int) {
+  def id=this.username+this.age
+}
+
+val persons = Seq(Person("bob", "Bob",19),Person("susan", "Susan",21))
+val personIds=persons.map(p => p.id -> p)
+val rdd=sc.makeRDD(personIds)
+
+
+rdd.saveToEsWithMeta("spark3/person_id")
