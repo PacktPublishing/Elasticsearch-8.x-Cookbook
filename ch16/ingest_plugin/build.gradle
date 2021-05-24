@@ -1,0 +1,57 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+  }
+
+  dependencies {
+    classpath "org.elasticsearch.gradle:build-tools:7.12.1"
+  }
+}
+
+repositories {
+  mavenLocal()
+}
+
+group = 'org.elasticsearch.plugin.ingest'
+version = '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'elasticsearch.esplugin'
+apply plugin: 'elasticsearch.yaml-rest-test'
+
+// license of this project
+licenseFile = rootProject.file('LICENSE.txt')
+// copyright notices
+noticeFile = rootProject.file('NOTICE.txt')
+
+esplugin {
+  name 'initial-processor'
+  description 'Initial Processor plugin'
+  classname 'org.elasticsearch.plugin.ingest.InitialIngestPlugin'
+  // license of the plugin, may be different than the above license
+  licenseFile rootProject.file('LICENSE.txt')
+  // copyright notices, may be different than the above notice
+  noticeFile rootProject.file('NOTICE.txt')
+}
+
+// In this section you declare the dependencies for your production and test code
+// Note, the two dependencies are not really needed as the buildscript dependency gets them in already
+// they are just here as an example
+dependencies {
+  compile 'org.elasticsearch:elasticsearch:7.12.1'
+
+  // the yaml tests require a log4j2 dependency, otherwise a dependency is thrown on startup
+  yamlRestTestImplementation 'org.apache.logging.log4j:log4j-core:2.11.1'
+  testCompile 'org.elasticsearch.test:framework:7.12.1'
+}
+
+// disable validation of pom creation, only needed for sonatype uploads
+validateNebulaPom.enabled = false
+
+// ignore javadoc linting errors for now
+tasks.withType(Javadoc) {
+  options.addStringOption('Xdoclint:none', '-quiet')
+}

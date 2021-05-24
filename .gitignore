@@ -1,0 +1,69 @@
+# pypi
+/build
+/dist
+
+# do not wants
+*.py[c|o]
+*.egg-info
+*.egg
+.*.swp
+.DS_Store
+*.zip
+
+# IDEs
+.idea
+.project
+*.iml
+.metals
+.bloop
+
+.gradle/
+build/
+out/
+*.swp
+*-execution-hints.log
+*-execution-times.log
+
+// ignore the downloaded model files in git
+src/test/resources/models/
+
+// intellij
+*.iml
+*.ipr
+*.iws
+
+// eclipse
+.project
+.classpath
+eclipse-build
+*/.project
+*/.classpath
+*/eclipse-build
+.settings
+
+target/
+images/out/
+__pycache__/
+
+bin/
+out/
+data/
+work/
+logs/
+build/
+/.idea
+.DS_Store
+*.iml
+*.ipr
+*.iws
+*.log
+.settings
+.gradle/
+/.classpath
+.project
+.classpath
+
+.vscode
+*.tar.gz
+*x86*
+
